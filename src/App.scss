@@ -1,0 +1,221 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+@font-face {
+  font-family: "TestFoundersGrotesk";
+  font-weight: 400;
+  src: url("./assets/typeface/TestFoundersGrotesk-Regular.otf") format("opentype");
+}
+
+
+@font-face {
+  font-family: "TestFoundersGrotesk";
+  font-weight: 700;
+  src: url("./assets/typeface/TestFoundersGrotesk-Bold.otf") format("opentype");
+}
+
+
+
+// Set your brand colors
+$--primary-color-green: #4caf4f;
+$--secondary-color-black: #000000;
+$--info-color-blue: #2194f3;
+
+// Set your neutral colors
+$--neutral-color-white: #ffffff;
+$--neutral-color-silver: #f5f7fa;
+$--neutral-color-dark-grey: #4d4d4d;
+$--neutral-color-grey: #717171;
+$--neutral-color-light-grey: #89939e;
+$--neutral-color-grey-blue: #abbed1;
+
+// Set your color shade
+$--shade-1: #43a046;
+$--shade-2: #388e3b;
+$--shade-3: #237d31;
+$--shade-4: #1b5e1f;
+$--shade-5: #103e13;
+
+// Set your color tint
+$--tint-1: #66bb69;
+$--tint-2: #81c784;
+$--tint-3: #a5d6a7;
+$--tint-4: #c8e6c9;
+$--tint-5: #e8f5e9;
+
+// Set your color action
+$--warning: #fbc02d;
+$--error: #e53835;
+$--success: #2e7d31;
+
+// Update Bulma's global variables
+$family-sans-serif: "Poppins", sans-serif;
+$heading-font: "TestFoundersGrotesk", sans-serif;
+$primary: $--secondary-color-black;
+$link: $--error;
+$info: $--info-color-blue;
+$success: $--success;
+$warning: $--warning;
+$danger: $--error;
+$dark: $--neutral-color-dark-grey;
+$text: $--neutral-color-dark-grey;
+
+$input-background-color: $--neutral-color-dark-grey;
+$input-radius: 0.125rem;
+$input-color: $--neutral-color-white;
+$input-border-color: $--error;
+$input-icon-color: $--neutral-color-white;
+$input-hover-border-color: $--neutral-color-dark-grey;
+$input-icon-active-color: $--neutral-color-white;
+
+$navbar-item-img-max-height: 4rem;
+
+* {
+  font-family: $family-sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $heading-font !important;
+}
+
+.anniversary {
+  background-image: url("./assets/anniversaryBg.jpg");
+  //background-position: cover cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+  background-size: cover !important;
+  background-position: 60% 30% !important;
+}
+
+
+.bgr-title {
+  font-size: 40px !important;
+  line-height: 36px !important;
+  font-family: $heading-font !important;
+  font-style: normal !important;
+}
+.bgr-feature-title {
+  font-family: $heading-font !important;
+  font-style: normal !important;
+  font-size: 60px !important;
+  line-height: 50px !important;
+}
+.bgr-subtitle {
+  font-size: 48px !important;
+  line-height: 72px !important;
+  font-family: $heading-font !important;
+}
+
+.cart-count-bubble {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(var(--color-foreground));
+  height: 25px;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0 5px;
+  left: 100%;
+  line-height: calc(1 + 0.1 / var(--font-body-scale));
+}
+
+.is-curated {
+  height: 180px;
+  width: 320px;
+}
+
+.main-hero {
+  background-image: url("./assets/cover.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.badge:after {
+  content: attr(value);
+  font-size: 12px;
+  color: #fff;
+  background: red;
+  border-radius: 50%;
+  padding: 0 5px;
+  position: relative;
+  left: -8px;
+  top: -10px;
+  opacity: 0.9;
+}
+
+.btn {
+  border-radius: 0rem !important;
+}
+
+.showcase-content {
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 9rem;
+  z-index: 2;
+  color: #fff;
+}
+
+.showcase-content h1 {
+  font-weight: 700;
+  font-size: 5.2rem;
+  line-height: 1.1;
+  margin: 0 0 2rem;
+}
+
+.showcase-content p {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.5rem;
+  line-height: 1.25;
+  margin: 0 0 2rem;
+}
+
+$panel-block-hover-background-color: $--error;
+
+.panel-block {
+  &:hover {
+    color: $--neutral-color-white;
+    border-radius: 0 !important;
+    background-size: auto 100% !important;
+    background-image: url("./assets/nav-active-bg.4ae245653e18d6c7.jpg") !important;
+  }
+}
+
+$tag-radius: 5px;
+
+.footer {
+  background: $--secondary-color-black !important;
+
+  a {
+    color: $--neutral-color-white;
+
+    &:hover {
+      color: $--error;
+    }
+  }
+}
+
+// Import only what you need from Bulma
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/_all.sass";
+@import "../node_modules/bulma/sass/form/_all.sass";
+@import "../node_modules/bulma/sass/components/_all.sass";
+@import "../node_modules/bulma/sass/grid/_all.sass";
+@import "../node_modules/bulma/sass/helpers/_all.sass";
+@import "../node_modules/bulma/sass/layout/_all.sass";
