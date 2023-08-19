@@ -56,28 +56,18 @@ const Navbar = () => {
             </a>
           </div>
           <div className="navbar-end">
-            <div className="navbar-item">
-              <a onClick={toggleMenu}>
-                <FaSearch style={iconStyle} />
-              </a>
-              <a onClick={toggleMenu}>
-                <FaHeart style={iconStyle} />
-              </a>
-              <a onClick={toggleMenu}>
-                <FaUser style={iconStyle} />
-              </a>
-              <NavLink
-                to="/Cart"
-                onClick={toggleMenu}
-                className="is-hidden-desktop"
-              >
-                <FaShoppingBag style={iconStyle} />
-              </NavLink>
-
-              <NavLink to="/Cart" onClick={toggleMenu}>
-                <FaShoppingBag style={iconStyle} />
-              </NavLink>
-            </div>
+            <a onClick={toggleMenu} className="navbar-item">
+              <FaSearch style={iconStyle} />
+            </a>
+            <a onClick={toggleMenu} className="navbar-item">
+              <FaHeart style={iconStyle} />
+            </a>
+            <a onClick={toggleMenu} className="navbar-item">
+              <FaUser style={iconStyle} />
+            </a>
+            <NavLink to="/Cart" onClick={toggleMenu} className="navbar-item">
+              <FaShoppingBag style={iconStyle} />
+            </NavLink>
           </div>
         </div>
       </div>
