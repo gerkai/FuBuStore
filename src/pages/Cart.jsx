@@ -35,7 +35,7 @@ const Cart = () => {
                     Price
                   </h4>
                 </div>
-                <div className="column is-2 has-text-centered">
+                <div className="column is-2">
                   <h4
                     className="has-text-grey has-text-weight-bold mb-6"
                     style={{ fontSize: "16px" }}
@@ -80,9 +80,7 @@ const Cart = () => {
                     </div>
                   </div>
                   <div className="column is-2 is-hidden-touch">
-                    <p className="subtitle has-text-info mb-0 has-text-weight-bold">
-                      $29.89
-                    </p>
+                    <p className="subtitle mb-0 has-text-weight-bold">$29.89</p>
                   </div>
                   <div className="column is-2-desktop is-3-tablet">
                     <div
@@ -93,7 +91,9 @@ const Cart = () => {
                       }}
                     >
                       <button className="button is-ghost has-text-grey p-0">
-                        <BiChevronsLeft width="12" height="12" />
+                        <span className="icon">
+                          <BiChevronsLeft />
+                        </span>
                       </button>
                       <p
                         className="px-2 py-4 has-text-centered"
@@ -106,14 +106,14 @@ const Cart = () => {
                         1
                       </p>
                       <button className="button is-ghost has-text-grey p-0">
-                        <BiChevronsRight width="12" height="12" />
+                        <span className="icon">
+                          <BiChevronsRight />
+                        </span>
                       </button>
                     </div>
                   </div>
                   <div className="column is-2">
-                    <p className="subtitle has-text-info has-text-weight-bold">
-                      $29.89
-                    </p>
+                    <p className="subtitle has-text-weight-bold">$29.89</p>
                   </div>
                 </div>
               </div>
@@ -134,12 +134,11 @@ const Cart = () => {
                     $89.67
                   </span>
                 </div>
-
                 <a
                   className="button is-large is-responsive btn is-primary is-fullwidth"
                   href="#"
                 >
-                  Go to Checkout
+                  Checkout
                 </a>
               </div>
             </div>
