@@ -1,12 +1,15 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import cartSlice from "../redux-toolkit/cartSlice";
 import { PRODUCTS } from "../products/data";
-import { BiMinus,  BiPlus } from "react-icons/bi";
+import { BiMinus, BiPlus, BiTrash } from "react-icons/bi";
 
 const Cart = () => {
   const { cartProductIds } = useSelector((state) => state.cart);
   const cartProductData = PRODUCTS.filter((product) =>
     cartProductIds.includes(product.id)
   );
+  const { removeFromCart } = cartSlice.actions;
+  const dispatch = useDispatch()
 
   return (
     <section className="section is-clipped">
@@ -17,7 +20,7 @@ const Cart = () => {
           <div className="columns is-multiline">
             <div className="column is-12 is-8-widescreen mb-8 mb-0-widescreen">
               <div
-                className="is-hidden-touch columns is-multiline"
+                className="columns is-hidden-touch is-multiline"
                 style={{ borderBottom: "1px solid grey" }}
               >
                 <div className="column is-6">
@@ -57,7 +60,7 @@ const Cart = () => {
                 {cartProductData.map((product) => {
                   return (
                     <div
-                      className="mb-6 mb-3-tablet columns is-vcentered is-multiline"
+                      className="columns mb-6 mb-3-tablet is-vcentered is-multiline"
                       key={product.id}
                     >
                       <div className="column is-6-desktop is-7-tablet mb-6 mb-0-tablet">
@@ -120,8 +123,22 @@ const Cart = () => {
                           </button>
                         </div>
                       </div>
-                      <div className="column is-2">
+                      <div className="column is-narrow">
                         <p className="has-text-weight-bold">$29.89</p>
+                      </div>
+                      <div className="column is-narrow">
+                        <button className="button is-ghost has-text-grey p-0">
+                          <span className="icon is-small">
+                            <a
+                              className=""
+                              onClick={() =>
+                                dispatch(removeFromCart(product.id))
+                              }
+                            >
+                              <BiTrash />
+                            </a>
+                          </span>
+                        </button>
                       </div>
                     </div>
                   );
