@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import cartSlice from "../redux-toolkit/cartSlice";
 import { PRODUCTS } from "../products/data";
-import { BiMinus, BiPlus, BiTrash } from "react-icons/bi";
+import { BiMinus, BiPlus, BiTrash, BiCart } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cartProductIds } = useSelector((state) => state.cart);
@@ -9,11 +10,11 @@ const Cart = () => {
     cartProductIds.includes(product.id)
   );
   const { removeFromCart } = cartSlice.actions;
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   return (
     <section className="section is-clipped">
-      <div className="container">
+     {cartProductData.length > 0 && ( <div className="container">
         <div className="has-background-white p-8 p-20-desktop">
           <h2 className="title mb-8 mb-20-tablet">Cart</h2>
 
@@ -173,7 +174,23 @@ const Cart = () => {
             </div>
           </div>
         </div>
-      </div>
+
+        
+      </div>)}
+      {cartProductData.length < 1 && (<div className="has-text-centered">
+          <BiCart size={200} fontWeight={900} />
+
+          <p className="title has-text-weight-semibold">
+            Your Cart is empty
+          </p>
+          <p className="subtitle">Proceed to store and start shopping</p>
+          <Link
+            to="/Shop"
+            className="button is-danger is-large is-responsive btn has-text-weight-bold"
+          >
+            Shop Now
+          </Link>
+        </div>)}
     </section>
   );
 };
